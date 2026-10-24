@@ -1,48 +1,70 @@
-# Interview speaking notes
+# Interview demonstration notes
 
-Synthetic Data — Demonstration Only.
+27 October 2026. Prepared for a Planning Analyst interview with Amy Terry and Tara Bartlett, Category Planners. This is an independent portfolio, not a commissioned or official Cotton On Group project.
+
+**Synthetic Data — Demonstration Only**
+
 Retail: Independent hypothetical retail planning simulation.
-Operations: Based on professional methods; synthetic demonstration data.
+Reconciliation: Based on professional inventory reconciliation methods; synthetic demonstration data.
 
-## 30-second introduction
+## Natural 20-second introduction
 
-My background combines business analytics, financial accounting and hands-on inventory operations. I have put together a short, independent retail planning simulation using entirely synthetic data. It shows how I would investigate sales and stock, challenge a forecast and turn the evidence into a commercial recommendation. Would you like me to walk you through it? It takes about three minutes.
+“I have built a short retail planning simulation using entirely synthetic data. It connects sales evidence, stock availability and Excel modelling to a commercial decision. Would you like to see a three-minute example of how I would review a replenishment and markdown decision?”
 
 ## Three-minute walkthrough
 
-### 0:00–0:30 — Business problem / Executive Overview
+Use **Reset Demo**, then **Start 3-minute walkthrough**. Next step navigates directly to the relevant product and scenario. The times below allow brief clicks and pauses. The sidebar retains the reconciliation case for optional follow-up.
 
-This independent simulation asks a commercial question: where should a planner invest limited stock budget? I built twenty weeks of synthetic sales for twenty-four products across stores and online. The focus is balancing availability, inventory exposure and gross margin. These are demonstration figures, not results from an employer or an official company project.
+### 0:00–0:25 — Business problem
 
-### 0:30–1:05 — Evidence / SKU performance
+“The question is where to invest stock budget. I want to protect sales without tying up too much inventory or sacrificing margin. This simulation has twenty weeks, twenty-four fictional products, three stores and online. The overview separates net sales, gross profit and inventory investment.”
 
-The action centre highlights a fast-selling notebook with cover below its supplier lead time. Lifestyle has weaker underlying demand and accumulating stock. The gifting spike is a temporary promotion, so I would not extrapolate it indefinitely. Here I can inspect the product's weekly sales, forecast error and stock equation. The notebook's observed sales are constrained by stock, so I would challenge the demand baseline before ordering.
+### 0:25–0:55 — Sales and inventory evidence
 
-### 1:05–1:40 — Analysis / Scenario & replenishment
+“Orbit Notebook has been selling successfully but now has no stock. Its recent forecast error is high. Observed sales are constrained by availability, so I would not treat the rolling average as unconstrained customer demand. Lifestyle has the opposite issue: stock has accumulated while sales have declined.”
 
-My baseline is a four-week rolling average. Historical forecasts use only earlier observations. Replenishment covers lead time, target cover and safety stock, deducts on-hand and incoming stock, and rounds to a supplier pack. Adding two weeks of lead time increases the proposed order. I would confirm receipt timing and demand with the team because a mathematically correct order is only useful when its assumptions are credible.
+### 0:55–1:30 — Forecast and replenishment logic
 
-### 1:40–2:10 — Financial implications / Financial plan
+“The baseline averages the last four observed weeks. Historical forecasts use earlier weeks only. Here weekly demand is thirty-five units, incoming is twenty-four, target cover is four weeks and safety is one week. Increasing supplier lead time from four to six weeks changes the pack-rounded order from 294 to 366 units. I can expand the actual calculation. These are proposals: I still need to validate demand and delivery dates.”
 
-A markdown can accelerate demand but reduces unit margin. The response here is a hypothetical assumption, not a measured causal effect. Open-to-buy is on a cost basis: planned cost of sales plus target closing stock, less opening stock and committed orders. A negative value signals overcommitment for review. Excess stock remains visible when projected closing is above target.
+### 1:30–2:05 — Commercial implications
 
-### 2:10–2:40 — Reconciliation / Inventory Reconciliation
+“For Lifestyle, a hypothetical twenty-percent markdown increases forecast fulfilled units from 860 to about 998 at the default response assumption. But gross profit falls from about $14,275 to $10,775. The extra units do not compensate for lower contribution. I can change the assumed response; this is not measured price elasticity. I would compare receipt pauses, transfers and a smaller targeted markdown before deciding.”
 
-My warehouse experience taught me that a system difference is not proof of physical loss. This case normalises ERP, WMS and count records, matches serials and references, and surfaces duplicates, mappings and cutoff differences. Each exception retains source evidence, an investigation owner and a review trail. Corrections need verification before an exception is closed.
+### 2:05–2:30 — Recommendation
 
-### 2:40–3:00 — Recommendation / Excel Model
+“My recommendation is to verify the notebook's incoming orders and stockout-censored demand, then protect availability. For Lifestyle, pause unnecessary receipts and test a targeted option against margin. The financial plan uses cost-based open-to-buy, and keeps excess closing stock visible. Undated receipts are excluded from projected sales by default.”
 
-I would validate incoming receipts, protect the bestseller, pause unnecessary Lifestyle orders and test a targeted markdown against margin. I would monitor forecast error and verify corrections. The Excel model makes my assumptions and calculations easy to review. I am keen to learn your planning systems, trading calendar and category context.
+### 2:30–3:00 — Excel validation
 
-## Follow-up answers
+“The Excel model makes the reasoning reviewable. It has native SUMIFS, INDEX/MATCH, IFERROR and pack-rounded replenishment formulas. Change lead time, demand or target cover and recalculate; source totals and stock checks must still tie. My finance and inventory background helps me validate the inputs. I am keen to learn your category context, trading calendar and planning processes.”
 
-1. **What business problem does the model address?** It allocates inventory investment between protecting availability and reducing excess, while showing gross-margin trade-offs. It supports review and prioritisation; purchase approvals remain a business decision.
-2. **How did you clean and reconcile the data?** I validate identifiers, numeric quantities and dates, normalise field names and key casing, identify duplicate source/serial/reference combinations and compare SKU, status, quantity and snapshot cutoff evidence. I retain exceptions rather than silently overwriting them.
-3. **How do you calculate Weeks of Cover and replenishment?** Cover is on-hand divided by forecast weekly demand. Orders fund lead time plus target and safety cover, deduct available and incoming stock, and round to packs. Zero demand produces N/A cover. Receipt dates, reserved stock and stockout-censored demand require review.
-4. **How do forecast variance and margin influence recommendations?** Historical variance and WAPE compare matching forecast and actual periods. High error reduces confidence. Monetary exposure and urgency drive review priority; contribution margin helps decide whether a markdown or larger order is commercially justified.
-5. **Why build this when applying for an entry-level role?** It demonstrates how I structure a problem and makes my reasoning easy to challenge. I expect to learn the team's systems, category context and processes. The model supports that learning and does not replace commercial experience.
-6. **How does your warehouse experience transfer?** At FoxESS Australia I work with warehouse operations, ERP/WMS reconciliation, stocktakes, serial traceability and data quality. These methods help establish trustworthy stock positions. My BF Suma background adds accounting, purchasing coordination and cross-functional context. Retail adds customer demand, assortment and margin decisions that I am motivated to learn.
+## Five likely Category Planner follow-up questions
 
-## Background and integrity
+1. **How would you decide whether to place the order?** Validate available stock, reservations, incoming arrival dates and supplier constraints. Check demand lost during stockouts and compare transfers or expediting. The proposal is a review starting point, not an automatic purchase approval.
+2. **How do forecasting, cover and safety stock work here?** Historical forecasts use up to four earlier weeks; the forward baseline averages up to four selected weeks. Cover is on-hand divided by weekly demand. Orders cover lead time plus target and safety weeks, less available and incoming stock, rounded up to packs. Zero demand gives N/A cover and zero orders; incomplete recent history withholds the proposal.
+3. **What evidence supports the markdown uplift?** None beyond the explicit hypothetical assumption. Response 0.8 and markdown 20% imply demand uplift 16%. I would validate this with comparable promotions, availability, customer response, channel mix and incrementality. Higher unit sales alone are insufficient if gross profit falls.
+4. **Which Excel skills can you demonstrate rather than simply list?** SUMIFS and SUMIF at a defined grain; INDEX/MATCH master-data lookups; rolling-demand calculations; IF/IFERROR for unavailable ratios and risk conditions; ROUNDUP for supplier packs; stock equations, WAPE, duplicate checks and cost-based financial bridges. I can change an assumption, trace dependent formulas and reconcile outputs. I have not claimed native PivotTables or Power Query connections in this file.
+5. **How does your experience transfer, and why build this for an entry-level role?** My BF Suma work connects accounting, commercial operations and purchasing coordination. At FoxESS Australia I work with inventory records, ERP/WMS reconciliation, stocktakes, serial traceability and process improvement. These methods support reliable planning inputs. The portfolio makes my reasoning easy to challenge; I expect to learn retail assortment, seasonality and the team's planning systems rather than claim existing category-planning expertise.
 
-Master's in Business Analytics. Bachelor's in Management specialising in Financial Accounting. BF Suma Kenya: accounting, finance, commercial operations, purchasing coordination and cross-functional projects. FoxESS Australia: warehouse operations and inventory data quality methods. Experience with Excel, Power Query, Power BI, SQL, Python, ERP/WMS, process mapping and analytical modelling; designed a lightweight WMS prototype with validation, exceptions and audit trails. No measurable result is attributed to an actual employer. This is not a university assignment, an official Typo project or an implementation for Cotton On Group.
+## Excel skills and a short live verification
+
+- Open the nine-sheet workbook and retain the default fixed cutoff, Week 20.
+- Change **Assumptions B5** from 0 to 2. **Inventory Planning K2** changes from 294 to 366 units.
+- Reset B5 to 0. Change **B6** from 4 to 6. K2 again becomes 366, because target cover adds two weeks of demand.
+- Reset B6 to 4. Change **B2** to −100%. Demand and orders become zero; cover is N/A.
+- Reset B2 to 0. Set **B4** to 20% and **B9** to 2. Notebook weekly demand becomes 49; price becomes $9.60. Restore B4 to 0 and B9 to 0.8.
+- **B11** defaults to 0: exclude undated incoming from four-week fulfilled sales. Set to 1 to test the explicit all-arrives assumption. Notebook fulfilled units then rise from 0 to 24; urgent stockout classification does not disappear.
+- Recalculate using Excel's Formulas → Calculate Now. Confirm the Data Quality Checks are zero (fact count is 1,920). Restore assumptions after demonstrating.
+
+## Assumptions and limitations
+
+All facts are deterministic synthetic data. Forecasts are a transparent baseline, not a sophisticated demand model. Sales may be stockout-censored, and promotions can distort recent averages. Markdown response is hypothetical and configurable from 0 to 2. Forecast quantities can be fractional; supplier orders are rounded to packs of six.
+
+All on-hand is assumed saleable and available. There are no reservation, dated purchase-order or inter-store allocation records. Unconfirmed incoming is credited in longer-term order proposals but excluded from four-week sales by default. Supply bounds show the consequence of assuming none versus all arrives; neither promises arrival before a stockout.
+
+Sales are at retail selling price; inventory, receipts and OTB are at cost. Gross profit excludes operating expenses and is not net profit. OTB is a simplified category plan, not cash flow or a purchase approval. Financial-plan sales are unconstrained; scenario fulfilled sales are supply-constrained. These are deliberately different outputs.
+
+The reconciliation workflow retains evidence and separates physical observations, pending updates and unresolved exceptions. A system mismatch is never automatically a physical loss. Review notes are session-local and do not write to employer systems. No employer data, source code or measured business outcomes are included.
+
+The application and Excel agree on baseline assumptions where comparable. Excel WAPE is full-period; application SKU confidence is recent-period and requires sufficient history. Formula-engine verification is documented in VALIDATION.md; native desktop Excel recalculation must not be claimed unless actually performed.
