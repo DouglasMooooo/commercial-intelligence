@@ -1,2 +1,4 @@
-import Portfolio from '@/components/Portfolio';
-export default function Page(){return <Portfolio/>;}
+import PlanningSnapshot from '@/components/PlanningSnapshot';
+import {master,sales} from '@/lib/data';
+import {interviewSnapshot} from '@/lib/interview-snapshot';
+export default function Page(){return <PlanningSnapshot snapshot={interviewSnapshot(sales,master)}/>;}

@@ -1,12 +1,23 @@
 # Validation record
 
-Verified 25 October 2026, Australia/Sydney. This record describes the current refined application, not a deployment claim. All business data is synthetic and reproducible.
+Updated 26 October 2026, Australia/Sydney. All business data is synthetic and reproducible. The homepage is now a three-SKU visual companion; the prior extended application remains at `/advanced`.
+
+## Selected-SKU companion verification
+
+- Read the primary Google Sheets model without editing it. All 240 selected source facts match the existing repository generator across 5,760 fields, including Online and all returns.
+- Read `ASSUMPTIONS`, `STORE FORECAST`, `SKU PLANNING`, `PO REGISTER`, `DASHBOARD` and `AUDIT CHECKS`, including the live formula basis. Baseline: uplift 0%, target cover 4 weeks, safety 1 week, four-week window ending Week 20.
+- Independently computed net sales AUD 61,540.20, GP AUD 38,953.08, GM 63.29696686% and 2 SKUs at risk. Stock = 0 / 234 / 1,124; existing on-order = 24 / 72 / 96; replenishment proposals = 294 / 48 / 0. Cover = 0 / 4.65671642 / 37.15702479 weeks.
+- Five added regression tests verify the totals, store-level demand aggregation, every point in the 20-week three-series net-units chart, separation from historical forecasts, exact Sheets link and rejection of incomplete/duplicate selected facts. All 34 tests pass.
+- Local browser checks passed at 1366 × 900 and 390 × 844: visible disclaimer, KPI values, three distinguishable line series, all three inventory rows, correct primary Sheets link and contained horizontal inventory scrolling on mobile. No live-sync claim or spreadsheet write was introduced.
+- The existing Vercel project and production alias are reused. This section records source alignment and local verification; verify the actual production URL after deploying the homepage.
+
+The checks below also cover the retained extended application, existing workbook and unchanged synthetic generator.
 
 ## Automated and workbook results
 
 | Check | Actual result |
 | --- | --- |
-| Unit/regression tests | PASS — 29 tests, 0 failed |
+| Unit/regression tests | PASS — 34 tests, 0 failed |
 | TypeScript `tsc --noEmit` | PASS — strict checking, no errors |
 | ESLint | PASS — no errors or warnings |
 | Next.js production build | PASS — compiled and statically prerendered `/` |
@@ -83,6 +94,6 @@ Repository source and browser static bundles were checked for common secret patt
 
 **Desktop Excel recalculation was not performed.** Formula recalculation was tested in the authoring engine and exported results were independently inspected. Open in desktop Excel, select automatic calculation and recalculate after editing; the exact checks are in README and docs/interview-demo.md. No native PivotTables or Power Query connections are claimed.
 
-**Vercel deployment is blocked by authentication.** No Vercel token, saved CLI authentication, installed CLI or linked `.vercel` project was available in the checked local environment. The GitHub deployment list was empty. No live Vercel URL or successful cloud deployment is claimed. README contains exact login, linking, deployment and URL-verification steps. Existing GitHub access is not Vercel deployment authentication.
+**Existing Vercel production project:** `douglas-mos-projects/commercial-intelligence`, alias https://commercial-intelligence-tau.vercel.app/. Vercel sign-in and the original production deployment succeeded on 25 October 2026. Reuse its linked project ID for the simplified homepage. Authentication and the actual deployed page must be rechecked when deploying; an existing alias alone does not prove a new version is live.
 
 Observed sales may be stockout-censored, the markdown response is hypothetical, receipt dates are unknown and on-hand is assumed saleable. No expenses, taxes, cash-flow timing or inter-store allocations are modelled. The order is a review proposal, not a purchase approval. Reconciliation review/audit data is session-local and performs no external corrections.

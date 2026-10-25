@@ -1,5 +1,15 @@
 # Commercial Intelligence | Retail Planning & Inventory Analytics
 
+## One-minute interview homepage
+
+The [production homepage](https://commercial-intelligence-tau.vercel.app/) is a read-only visual companion to the [primary Google Sheets planning model](https://docs.google.com/spreadsheets/d/10MVAME7TsKFh4tENS7ADAFivd3vb1zxxKWNXR0iFw1g/edit). It shows only DEMO-101, DEMO-201 and DEMO-301: 20 weeks across all four locations, including Online, with Week 20 stock snapshots. It shares the same synthetic source and agreed baseline; it is **not live-synchronised**. Change assumptions in Google Sheets.
+
+Verified on 26 October 2026: all 240 Sheets source rows (5,760 fields) match the existing generator. Calculated net sales are AUD 61,540.20, gross profit AUD 38,953.08 and gross margin 63.297%. Replenishment proposals are 294 / 48 / 0 units. Demand sums store-level Weeks 17–20 net-unit averages; it does not substitute historical store forecasts. Existing on-order quantities are 24 / 72 / 96, separate from proposals. The generator, source exports and original planning engine are unchanged.
+
+10–15-second introduction: “This is a visual companion to my Google Sheets model. It highlights the same three products: one with a stockout risk, one balanced and one carrying excess stock.”
+
+The original application remains at `/advanced`. The longer walkthrough, advanced scenarios, reconciliation and downloadable Excel described below belong to that optional extended portfolio; they are not the primary one-minute interview model.
+
 **Synthetic Data — Demonstration Only.** English-only independent analytics portfolio for a retail planning interview. Retail case: **Independent hypothetical retail planning simulation.** Operations case: **Based on professional inventory reconciliation methods; synthetic demonstration data.** No employer inputs, records, credentials or internal code were used. No employer results are claimed. This is not an official Typo or Cotton On Group project.
 
 ## Run locally
@@ -35,7 +45,7 @@ pnpm dlx vercel --prod
 
 In the dashboard, import the existing GitHub repository `DouglasMooooo/commercial-intelligence`. For CLI linking, choose the correct personal Vercel scope and an existing Vercel project, or create a hosting project for this same repository. Use Next.js and root directory `./`. No secrets or environment variables are required. After the CLI reports success, verify the literal returned production URL with `node scripts/smoke.mjs https://YOUR-ACTUAL-DEPLOYMENT-URL` and browser-test Reset Demo, both scenario shortcuts, SKU filters, receipt assumptions, reconciliation drilldown and Excel download. Do not assume a deployment succeeded without a real URL and verification.
 
-No Vercel token, saved CLI authentication or linked project was available in the checked local environment. GitHub has no deployment records for this repository. Deployment is blocked on authenticating a Vercel account and linking this repository; no live Vercel URL is claimed. The application is production-built and can be run locally.
+The existing Vercel production project is `douglas-mos-projects/commercial-intelligence`, linked locally through the ignored `.vercel/project.json`. Its production alias is https://commercial-intelligence-tau.vercel.app/. Deploy to this existing project; do not create a second hosting project. Verify the actual production page after every deployment. The application needs no environment variables or paid services.
 
 ## Included workflows
 
