@@ -10,6 +10,7 @@ Updated 26 October 2026, Australia/Sydney. All business data is synthetic and re
 - Five added regression tests verify the totals, store-level demand aggregation, every point in the 20-week three-series net-units chart, separation from historical forecasts, exact Sheets link and rejection of incomplete/duplicate selected facts. All 34 tests pass.
 - Local browser checks passed at 1366 × 900 and 390 × 844: visible disclaimer, KPI values, three distinguishable line series, all three inventory rows, correct primary Sheets link and contained horizontal inventory scrolling on mobile. No live-sync claim or spreadsheet write was introduced.
 - The existing Vercel project and production alias are reused. This section records source alignment and local verification; verify the actual production URL after deploying the homepage.
+- Production homepage verified anonymously on 26 October 2026 at https://commercial-intelligence-tau.vercel.app/: selected KPI values, all inventory rows, correct Sheets link, three named line series with 20 points each, and `/advanced` returning the original application. Existing downloads also pass the HTTP smoke check. Chart tooltips retain product names as well as net-unit values.
 
 The checks below also cover the retained extended application, existing workbook and unchanged synthetic generator.
 
